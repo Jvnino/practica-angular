@@ -1,0 +1,22 @@
+<!-- <h1 [ngClass]="claseCss" *ngIf="tipo == 'h1'; else tituloH2">
+    {{titulo}}
+</h1>
+
+<ng-template #tituloH2>
+    <p [ngClass]="claseCss">
+        {{titulo}}
+    </p>
+</ng-template> -->
+
+<div [ngSwitch]="tipo">
+    <h1 *ngSwitchCase="'h1'" [ngClass]="claseCss">
+        {{titulo}}
+    </h1>
+
+    <h2 *ngSwitchCase="'h2'" [ngClass]="claseCss">
+        {{titulo}}
+    </h2>
+
+    <p *ngSwitchDefault>output2</p>
+
+</div>>

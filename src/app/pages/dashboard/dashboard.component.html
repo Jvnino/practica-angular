@@ -1,0 +1,10 @@
+<section>
+    <div *ngFor="let item of listaTitulos" >
+        <app-titulo [titulo]="item.texto" 
+        [color] = "item.color"
+        [tipo] = "item.tipo"
+        ></app-titulo>
+    </div>
+</section>
+
+    
