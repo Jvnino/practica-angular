@@ -4,8 +4,8 @@ import { DashboardComponent } from './dashboard.component';
 import { RegistroUsuariosComponent } from './registro-usuarios/registro-usuarios.component';
 import { DashboardRoutingModule } from './dashboard-routing/dashboard-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
-
-
+import { HttpClientModule} from '@angular/common/http'
+import { ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -15,7 +15,9 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   exports: [
     DashboardComponent

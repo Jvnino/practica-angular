@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Tipos } from '../types/tipos.type';
 
 @Component({
@@ -13,4 +13,9 @@ export class TituloComponent {
     this.claseCss = value
   }
   @Input() tipo: Tipos ='h1'
+  @Output() clickEvent = new EventEmitter<string>();
+
+  onClick(){
+    
+  }
 }

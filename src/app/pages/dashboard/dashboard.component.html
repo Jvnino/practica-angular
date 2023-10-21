@@ -1,10 +1,30 @@
 <section>
-    <div *ngFor="let item of listaTitulos" >
+    <button (click)="loadProductos()">Cargar proyecto</button>
+    
+    <div>
+        <form [formGroup]="formulario" *ngIf="productos.length > 0" (submit) = "buscarProductos()">
+            <input type="text" name="categoria" formControlName="categoria">
+            <button type="submit" [disabled]="!formulario.valid">Buscar</button>
+        </form>
+        <ul>
+            <li *ngFor="let producto of productosFiltro">
+                <p>Categoria: {{producto.category}}</p>
+                <p>Titulo: {{producto.title}}</p>
+                <p>Precio: {{producto.price}}</p>
+                <p>Descripcio: {{producto.description}}</p>
+                <div>
+                    <img src="{{producto.image}}" alt="" width="100">
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- <div *ngFor="let item of listaTitulos" >
         <app-titulo [titulo]="item.texto" 
         [color] = "item.color"
         [tipo] = "item.tipo"
+        (clickEvent)="onClickTitulo($event)"
         ></app-titulo>
-    </div>
+    </div> -->
 </section>
 
     

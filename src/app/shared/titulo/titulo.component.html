@@ -8,7 +8,7 @@
     </p>
 </ng-template> -->
 
-<div [ngSwitch]="tipo">
+<div [ngSwitch]="tipo" (click)="onClick()">
     <h1 *ngSwitchCase="'h1'" [ngClass]="claseCss">
         {{titulo}}
     </h1>
